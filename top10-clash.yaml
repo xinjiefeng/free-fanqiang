@@ -5,33 +5,25 @@ mode: rule
 log-level: info
 proxies:
 - cipher: aes-128-gcm
-  name: shadowsocks-213
-  password: shadowsocks
-  port: 443
-  server: 149.22.87.240
-  type: ss
-  udp: true
-- cipher: aes-128-gcm
   name: shadowsocks-218
   password: shadowsocks
   port: 443
   server: 149.22.87.204
   type: ss
   udp: true
-- cipher: aes-256-gcm
-  name: shadowsocks-696780669
-  password: 3eOFeNssde7PYYMv
-  port: 80
-  server: 84.247.155.196
+- cipher: rc4-md5
+  name: shadowsocks-27348
+  password: 14fFPrbezE3HDZzsMOr6
+  port: 8080
+  server: 68.183.227.4
   type: ss
   udp: true
-- name: trojan-1643514781
-  password: UX82473651
-  port: 443
-  server: evolving-platypus.rooster465.autos
-  skip-cert-verify: true
-  sni: evolving-platypus.rooster465.autos
-  type: trojan
+- cipher: aes-256-gcm
+  name: shadowsocks-1759999442
+  password: UsIv5aKJabiqnYtY8IfWd6FfgjzrJlfZ
+  port: 8388
+  server: 43.155.223.71
+  type: ss
   udp: true
 - name: trojan-1739093820
   password: UX82473651
@@ -41,19 +33,27 @@ proxies:
   sni: stable-python.rooster465.autos
   type: trojan
   udp: true
-- name: trojan-1739093818
+- name: trojan-1749156611
   password: UX82473651
   port: 443
-  server: live-stallion.rooster465.autos
+  server: 18.183.167.216
   skip-cert-verify: true
-  sni: live-stallion.rooster465.autos
+  sni: amazed-mako.rooster465.autos
+  type: trojan
+  udp: true
+- name: trojan-1735023414
+  password: UX82473651
+  port: 443
+  server: warm-krill.rooster465.autos
+  skip-cert-verify: true
+  sni: warm-krill.rooster465.autos
   type: trojan
   udp: true
 - client-fingerprint: firefox
   flow: xtls-rprx-vision
-  name: vless-479203984
+  name: vless-650632896
   network: tcp
-  port: 10583
+  port: 18007
   reality-opts:
     public-key: k2hPp0tTW0Da-HK94wYpSCLbuK44LfGqC2MSJIM1Ti0
     short-id: 48050fab
@@ -63,25 +63,32 @@ proxies:
   type: vless
   udp: true
   uuid: 814bd064-544d-4255-a070-5705c03f6da9
-- name: vless-656041581
+- client-fingerprint: safari
+  flow: xtls-rprx-vision
+  name: vless-1306367623
   network: tcp
-  port: 443
-  server: 137.220.221.179
+  port: 28573
+  reality-opts:
+    public-key: 1DJr9toke7FRuSXjibBVuNvRnLnJnN5kXwUBG6Romzg
+    short-id: 03653bc03be10c97
+  server: 18.183.215.124
+  servername: www.sony.com
+  tls: true
   type: vless
   udp: true
-  uuid: a16a3336-c9ab-489f-9b85-c973f5e2cfa4
+  uuid: 871bfce7-8440-4394-8d82-56b51f20fdad
 - alterId: 0
   cipher: auto
-  name: vmess-1061528836
+  name: vmess-1474560222
   network: tcp
   port: 18000
-  server: ww11.levikogjgfdd.ir
+  server: 149.88.23.207
   type: vmess
   udp: true
   uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
 - alterId: 0
   cipher: auto
-  name: vmess-468166904
+  name: vmess-685048480
   network: tcp
   port: 18000
   server: 149.88.23.202
@@ -92,16 +99,16 @@ proxy-groups:
 - name: 🚀 手动选择
   type: select
   proxies: &id001
-  - shadowsocks-213
   - shadowsocks-218
-  - shadowsocks-696780669
-  - trojan-1643514781
+  - shadowsocks-27348
+  - shadowsocks-1759999442
   - trojan-1739093820
-  - trojan-1739093818
-  - vless-479203984
-  - vless-656041581
-  - vmess-1061528836
-  - vmess-468166904
+  - trojan-1749156611
+  - trojan-1735023414
+  - vless-650632896
+  - vless-1306367623
+  - vmess-1474560222
+  - vmess-685048480
 - name: ♻️ 自动选择
   type: url-test
   url: http://www.gstatic.com/generate_204
