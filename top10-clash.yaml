@@ -5,13 +5,6 @@ mode: rule
 log-level: info
 proxies:
 - cipher: aes-128-gcm
-  name: shadowsocks-213
-  password: shadowsocks
-  port: 443
-  server: 149.22.87.240
-  type: ss
-  udp: true
-- cipher: aes-128-gcm
   name: shadowsocks-218
   password: shadowsocks
   port: 443
@@ -25,6 +18,21 @@ proxies:
   server: 84.247.155.196
   type: ss
   udp: true
+- cipher: aes-128-gcm
+  name: shadowsocks-213
+  password: shadowsocks
+  port: 443
+  server: 149.22.87.240
+  type: ss
+  udp: true
+- name: trojan-1681917898
+  password: e26a229d-e8f2-4ff9-8c7d-58a9d83ee437
+  port: 8886
+  server: 45.32.52.173
+  skip-cert-verify: true
+  sni: 45.32.52.173
+  type: trojan
+  udp: true
 - name: trojan-1683332153
   password: e26a229d-e8f2-4ff9-8c7d-58a9d83ee437
   port: 8886
@@ -33,24 +41,16 @@ proxies:
   sni: 45.32.52.173
   type: trojan
   udp: true
-- name: trojan-1740066482
-  password: UX82473651
+- name: trojan-1804404907
+  password: Trojan@82164024
   port: 443
-  server: live-stallion.rooster465.autos
+  server: 108.61.186.37
   skip-cert-verify: true
-  sni: ''
+  sni: jp.tronsg.com
   type: trojan
   udp: true
-- name: trojan-1759616101
-  password: UX82473651
-  port: 443
-  server: allowed-poodle.rooster465.autos
-  skip-cert-verify: true
-  sni: allowed-poodle.rooster465.autos
-  type: trojan
-  udp: true
-- client-fingerprint: chrome
-  name: vless-1793989782
+- client-fingerprint: random
+  name: vless-1302936702
   network: tcp
   port: 2053
   reality-opts:
@@ -62,35 +62,31 @@ proxies:
   type: vless
   udp: true
   uuid: b4caaf57-ad77-4948-a6f5-51b3513799bf
-- client-fingerprint: random
-  flow: xtls-rprx-vision
-  name: vless-1763253714
+- client-fingerprint: chrome
+  name: vless-1787917454
   network: tcp
-  port: 443
+  port: 2053
   reality-opts:
-    public-key: 9ZCYjybxMQ7JpE39B8u_Bo-alI1LIbt5ER0E-4yMjiM
-    short-id: ea36c03d86f91287
-  server: 142.91.108.25
-  servername: jp3.nztvpn.com
+    public-key: hieuCHb3HYdDYHmTDyWw2SGqyfo36AVuA-wSiZMdU1M
+    short-id: 9922313fffed1c63
+  server: 46.250.250.149
+  servername: www.apple.com
   tls: true
   type: vless
   udp: true
-  uuid: ee18d188-14cc-417e-beb1-70e4add6d023
+  uuid: b4caaf57-ad77-4948-a6f5-51b3513799bf
 - alterId: 0
   cipher: auto
-  name: vmess-1770007899
-  network: ws
-  port: 443
-  server: jp5.998998.best
-  servername: server11.9966338.xyz
-  skip-cert-verify: false
-  tls: true
+  name: vmess-1327548634
+  network: tcp
+  port: 18000
+  server: ww11.levikogjgfdd.ir
   type: vmess
   udp: true
-  uuid: 5504eaa8-1395-402f-8e0e-75ecd762e627
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
 - alterId: 0
   cipher: auto
-  name: vmess-1061528836
+  name: vmess-1249139858
   network: tcp
   port: 18000
   server: ww11.levikogjgfdd.ir
@@ -101,16 +97,16 @@ proxy-groups:
 - name: 🚀 手动选择
   type: select
   proxies: &id001
-  - shadowsocks-213
   - shadowsocks-218
   - shadowsocks-696780669
+  - shadowsocks-213
+  - trojan-1681917898
   - trojan-1683332153
-  - trojan-1740066482
-  - trojan-1759616101
-  - vless-1793989782
-  - vless-1763253714
-  - vmess-1770007899
-  - vmess-1061528836
+  - trojan-1804404907
+  - vless-1302936702
+  - vless-1787917454
+  - vmess-1327548634
+  - vmess-1249139858
 - name: ♻️ 自动选择
   type: url-test
   url: http://www.gstatic.com/generate_204
