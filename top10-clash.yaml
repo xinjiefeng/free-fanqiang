@@ -5,13 +5,6 @@ mode: rule
 log-level: info
 proxies:
 - cipher: aes-128-gcm
-  name: shadowsocks-1827146287
-  password: shadowsocks
-  port: 443
-  server: 149.22.87.241
-  type: ss
-  udp: true
-- cipher: aes-128-gcm
   name: shadowsocks-1827146197
   password: shadowsocks
   port: 443
@@ -19,11 +12,26 @@ proxies:
   type: ss
   udp: true
 - cipher: aes-128-gcm
-  name: shadowsocks-1827146270
+  name: shadowsocks-1827146815
   password: shadowsocks
   port: 443
-  server: 149.22.87.240
+  server: 156.146.38.168
   type: ss
+  udp: true
+- cipher: rc4-md5
+  name: shadowsocks-1827969041
+  password: 14fFPrbezE3HDZzsMOr6
+  port: 8080
+  server: 23.251.121.242
+  type: ss
+  udp: true
+- name: trojan-1827148532
+  password: Trojan@82164024
+  port: 443
+  server: 108.61.186.37
+  skip-cert-verify: true
+  sni: jp.tronsg.com
+  type: trojan
   udp: true
 - name: trojan-1829089518
   password: Trojan@82164024
@@ -41,60 +49,52 @@ proxies:
   sni: jp.tronsg.com
   type: trojan
   udp: true
-- name: trojan-1828650588
-  password: Trojan@82164024
-  port: 443
-  server: 108.61.186.37
-  skip-cert-verify: true
-  sni: ''
-  type: trojan
-  udp: true
-- name: vless-1853489133
+- name: vless-1858668611
   network: ws
   port: 80
-  server: platform115.golnamakcert.top
+  server: 130.94.67.40
   type: vless
   udp: true
   uuid: e13cf851-b4fd-413b-8d49-146e6eb8e5d4
-- name: vless-1853487454
+- name: vless-1853500649
   network: ws
   port: 80
-  server: platform118.golnamakcert.top
+  server: platform117.golnamakcert.top
   type: vless
   udp: true
   uuid: e13cf851-b4fd-413b-8d49-146e6eb8e5d4
 - alterId: 0
   cipher: auto
-  name: vmess-1827159670
+  name: vmess-1827158496
   network: tcp
   port: 18000
-  server: ww11.levikogjgfdd.ir
+  server: 149.88.23.202
   type: vmess
   udp: true
   uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
 - alterId: 0
   cipher: auto
-  name: vmess-1864284788
-  network: ws
-  port: 29163
-  server: 95.217.27.161
+  name: vmess-1863068254
+  network: tcp
+  port: 18000
+  server: 149.88.23.207
   type: vmess
   udp: true
-  uuid: telegram-id-----MiMiTDL-----
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
 proxy-groups:
 - name: 🚀 手动选择
   type: select
   proxies: &id001
-  - shadowsocks-1827146287
   - shadowsocks-1827146197
-  - shadowsocks-1827146270
+  - shadowsocks-1827146815
+  - shadowsocks-1827969041
+  - trojan-1827148532
   - trojan-1829089518
   - trojan-1827960204
-  - trojan-1828650588
-  - vless-1853489133
-  - vless-1853487454
-  - vmess-1827159670
-  - vmess-1864284788
+  - vless-1858668611
+  - vless-1853500649
+  - vmess-1827158496
+  - vmess-1863068254
 - name: ♻️ 自动选择
   type: url-test
   url: http://www.gstatic.com/generate_204
