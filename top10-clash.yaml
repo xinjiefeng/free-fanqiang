@@ -4,6 +4,20 @@ allow-lan: true
 mode: rule
 log-level: info
 proxies:
+- cipher: rc4-md5
+  name: shadowsocks-1827147315
+  password: 14fFPrbezE3HDZzsMOr6
+  port: 8080
+  server: 68.183.227.4
+  type: ss
+  udp: true
+- cipher: aes-128-gcm
+  name: shadowsocks-1827146270
+  password: shadowsocks
+  port: 443
+  server: 149.22.87.240
+  type: ss
+  udp: true
 - cipher: aes-128-gcm
   name: shadowsocks-1827146197
   password: shadowsocks
@@ -11,90 +25,76 @@ proxies:
   server: 149.22.87.204
   type: ss
   udp: true
-- cipher: aes-128-gcm
-  name: shadowsocks-1827146815
-  password: shadowsocks
-  port: 443
-  server: 156.146.38.168
-  type: ss
-  udp: true
-- cipher: rc4-md5
-  name: shadowsocks-1827969041
-  password: 14fFPrbezE3HDZzsMOr6
-  port: 8080
-  server: 23.251.121.242
-  type: ss
-  udp: true
-- name: trojan-1827148532
-  password: Trojan@82164024
-  port: 443
-  server: 108.61.186.37
+- name: trojan-1848080925
+  password: p5jTPcffLgi4gaNOJd2KUTb9YEPBBD5B
+  port: 56127
+  server: 154.90.62.70
   skip-cert-verify: true
-  sni: jp.tronsg.com
+  sni: 154.90.62.70
   type: trojan
   udp: true
-- name: trojan-1829089518
-  password: Trojan@82164024
-  port: 443
-  server: jp.tronsg.com
+- name: trojan-1832868058
+  password: ae7eb4dwyaz25pxwgq59
+  port: 59689
+  server: 66.23.203.21
   skip-cert-verify: true
-  sni: ''
+  sni: 66.23.203.21
   type: trojan
   udp: true
-- name: trojan-1827960204
-  password: Trojan@82164024
-  port: 443
-  server: jp.tronsg.com
-  skip-cert-verify: false
-  sni: jp.tronsg.com
-  type: trojan
-  udp: true
-- name: vless-1858668611
+- name: vless-1874363452
   network: ws
   port: 80
-  server: 130.94.67.40
+  server: 130.94.65.138
   type: vless
   udp: true
   uuid: e13cf851-b4fd-413b-8d49-146e6eb8e5d4
-- name: vless-1853500649
+- name: vless-1853485677
   network: ws
   port: 80
-  server: platform117.golnamakcert.top
+  server: platform118.golnamakcert.top
   type: vless
   udp: true
   uuid: e13cf851-b4fd-413b-8d49-146e6eb8e5d4
 - alterId: 0
   cipher: auto
-  name: vmess-1827158496
-  network: tcp
-  port: 18000
-  server: 149.88.23.202
-  type: vmess
-  udp: true
-  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
-- alterId: 0
-  cipher: auto
-  name: vmess-1863068254
+  name: vmess-1828357776
   network: tcp
   port: 18000
   server: 149.88.23.207
   type: vmess
   udp: true
   uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+- alterId: 0
+  cipher: auto
+  name: vmess-1837386984
+  network: tcp
+  port: 18000
+  server: 149.88.23.202
+  type: vmess
+  udp: true
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+- name: trojan-1849374991
+  password: ae7eb4dwyaz25pxwgq59
+  port: 59689
+  server: 66.23.203.21
+  skip-cert-verify: true
+  sni: 66.23.203.21
+  type: trojan
+  udp: true
 proxy-groups:
 - name: 🚀 手动选择
   type: select
   proxies: &id001
+  - shadowsocks-1827147315
+  - shadowsocks-1827146270
   - shadowsocks-1827146197
-  - shadowsocks-1827146815
-  - shadowsocks-1827969041
-  - trojan-1827148532
-  - trojan-1829089518
-  - trojan-1827960204
-  - vless-1858668611
-  - vless-1853500649
-  - vmess-1827158496
-  - vmess-1863068254
+  - trojan-1848080925
+  - trojan-1832868058
+  - vless-1874363452
+  - vless-1853485677
+  - vmess-1828357776
+  - vmess-1837386984
+  - trojan-1849374991
 - name: ♻️ 自动选择
   type: url-test
   url: http://www.gstatic.com/generate_204
