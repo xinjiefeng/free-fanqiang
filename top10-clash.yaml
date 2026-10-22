@@ -4,11 +4,11 @@ allow-lan: true
 mode: rule
 log-level: info
 proxies:
-- cipher: rc4-md5
-  name: shadowsocks-1827147315
-  password: 14fFPrbezE3HDZzsMOr6
-  port: 8080
-  server: 68.183.227.4
+- cipher: aes-128-gcm
+  name: shadowsocks-1827146197
+  password: shadowsocks
+  port: 443
+  server: 149.22.87.204
   type: ss
   udp: true
 - cipher: aes-128-gcm
@@ -19,42 +19,49 @@ proxies:
   type: ss
   udp: true
 - cipher: aes-128-gcm
-  name: shadowsocks-1827146197
+  name: shadowsocks-1827146287
   password: shadowsocks
   port: 443
-  server: 149.22.87.204
+  server: 149.22.87.241
   type: ss
   udp: true
-- name: trojan-1848080925
-  password: p5jTPcffLgi4gaNOJd2KUTb9YEPBBD5B
-  port: 56127
-  server: 154.90.62.70
-  skip-cert-verify: true
-  sni: 154.90.62.70
-  type: trojan
-  udp: true
-- name: trojan-1832868058
-  password: ae7eb4dwyaz25pxwgq59
-  port: 59689
-  server: 66.23.203.21
-  skip-cert-verify: true
-  sni: 66.23.203.21
-  type: trojan
-  udp: true
-- name: vless-1874363452
-  network: ws
-  port: 80
-  server: 130.94.65.138
+- client-fingerprint: chrome
+  flow: xtls-rprx-vision
+  name: vless-1883363797
+  network: tcp
+  port: 443
+  reality-opts:
+    public-key: 9ZCYjybxMQ7JpE39B8u_Bo-alI1LIbt5ER0E-4yMjiM
+    short-id: ea36c03d86f91287
+  server: 142.91.108.25
+  servername: jp3.nztvpn.com
+  tls: true
   type: vless
   udp: true
-  uuid: e13cf851-b4fd-413b-8d49-146e6eb8e5d4
-- name: vless-1853485677
-  network: ws
-  port: 80
-  server: platform118.golnamakcert.top
+  uuid: ee18d188-14cc-417e-beb1-70e4add6d023
+- client-fingerprint: chrome
+  flow: xtls-rprx-vision
+  name: vless-1828536355
+  network: tcp
+  port: 443
+  reality-opts:
+    public-key: 9ZCYjybxMQ7JpE39B8u_Bo-alI1LIbt5ER0E-4yMjiM
+    short-id: ea36c03d86f91287
+  server: 142.91.108.25
+  servername: jp3.nztvpn.com
+  tls: true
   type: vless
   udp: true
-  uuid: e13cf851-b4fd-413b-8d49-146e6eb8e5d4
+  uuid: ee18d188-14cc-417e-beb1-70e4add6d023
+- alterId: 0
+  cipher: auto
+  name: vmess-1869798687
+  network: ws
+  port: 80
+  server: 168.138.43.75
+  type: vmess
+  udp: true
+  uuid: 11c3627f-31e8-4695-dfbd-34076e2f1f5d
 - alterId: 0
   cipher: auto
   name: vmess-1828357776
@@ -64,37 +71,44 @@ proxies:
   type: vmess
   udp: true
   uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
-- alterId: 0
-  cipher: auto
-  name: vmess-1837386984
-  network: tcp
-  port: 18000
-  server: 149.88.23.202
-  type: vmess
-  udp: true
-  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
-- name: trojan-1849374991
-  password: ae7eb4dwyaz25pxwgq59
-  port: 59689
-  server: 66.23.203.21
+- name: trojan-1827188340
+  password: e26a229d-e8f2-4ff9-8c7d-58a9d83ee437
+  port: 8886
+  server: 139.180.146.200
   skip-cert-verify: true
-  sni: 66.23.203.21
+  sni: 139.180.146.200
+  type: trojan
+  udp: true
+- name: trojan-1828295227
+  password: e26a229d-e8f2-4ff9-8c7d-58a9d83ee437
+  port: 8886
+  server: 139.180.146.200
+  skip-cert-verify: true
+  sni: 139.180.146.200
+  type: trojan
+  udp: true
+- name: trojan-1827937733
+  password: p5jTPcffLgi4gaNOJd2KUTb9YEPBBD5B
+  port: 56127
+  server: 154.90.62.70
+  skip-cert-verify: true
+  sni: 154.90.62.70
   type: trojan
   udp: true
 proxy-groups:
 - name: 🚀 手动选择
   type: select
   proxies: &id001
-  - shadowsocks-1827147315
-  - shadowsocks-1827146270
   - shadowsocks-1827146197
-  - trojan-1848080925
-  - trojan-1832868058
-  - vless-1874363452
-  - vless-1853485677
+  - shadowsocks-1827146270
+  - shadowsocks-1827146287
+  - vless-1883363797
+  - vless-1828536355
+  - vmess-1869798687
   - vmess-1828357776
-  - vmess-1837386984
-  - trojan-1849374991
+  - trojan-1827188340
+  - trojan-1828295227
+  - trojan-1827937733
 - name: ♻️ 自动选择
   type: url-test
   url: http://www.gstatic.com/generate_204
